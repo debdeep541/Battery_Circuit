@@ -1,0 +1,8 @@
+# KiCad backups and lock files
+*-backups/
+*.bck
+*.kicad_prl
+*.kicad_sch-bak
+*.kicad_pcb-bak
+*.lck
+fp-info-cache
