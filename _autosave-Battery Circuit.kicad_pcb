@@ -859,7 +859,7 @@
 				)
 			)
 		)
-		(property "Value" "22.1kΩ"
+		(property "Value" "32.4kΩ"
 			(at 0 1.17 0)
 			(layer "F.Fab")
 			(hide yes)
