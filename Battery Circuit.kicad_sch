@@ -1374,6 +1374,279 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Device:Thermistor_NTC"
+			(pin_numbers
+				(hide yes)
+			)
+			(pin_names
+				(offset 0)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "TH"
+				(at -4.445 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "Thermistor_NTC"
+				(at 3.175 0 90)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 0 1.27 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 1.27 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "Temperature dependent resistor, negative temperature coefficient"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_keywords" "thermistor NTC resistor sensor RTD"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "ki_fp_filters" "R_* RV_*"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "Thermistor_NTC_0_1"
+				(arc
+					(start -3.175 2.413)
+					(mid -3.0506 2.3165)
+					(end -3.048 2.159)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start -3.048 2.794)
+					(mid -2.9736 2.9736)
+					(end -2.794 3.048)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start -2.794 3.048)
+					(mid -2.6144 2.9736)
+					(end -2.54 2.794)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start -2.794 2.54)
+					(mid -2.9736 2.6144)
+					(end -3.048 2.794)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start -2.794 1.905)
+					(mid -2.9736 1.9794)
+					(end -3.048 2.159)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start -2.54 2.159)
+					(mid -2.6144 1.9794)
+					(end -2.794 1.905)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start -2.159 2.794)
+					(mid -2.434 2.5608)
+					(end -2.794 2.54)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.54 2.159) (xy -2.54 2.794)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -2.54 -3.683) (xy -2.54 -1.397) (xy -2.794 -2.159) (xy -2.286 -2.159) (xy -2.54 -1.397) (xy -2.54 -1.651)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.778 2.54) (xy -1.778 1.524) (xy 1.778 -1.524) (xy 1.778 -2.54)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -1.778 -1.397) (xy -1.778 -3.683) (xy -2.032 -2.921) (xy -1.524 -2.921) (xy -1.778 -3.683)
+						(xy -1.778 -3.429)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start -1.016 2.54)
+					(end 1.016 -2.54)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "Thermistor_NTC_1_1"
+				(pin passive line
+					(at 0 3.81 270)
+					(length 1.27)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at 0 -3.81 90)
+					(length 1.27)
+					(name ""
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Diode:SMAJ20A"
 			(pin_numbers
 				(hide yes)
@@ -3867,6 +4140,12 @@
 		(uuid "8cd375d3-be42-4b7b-b00e-54d8c8df7d51")
 	)
 	(junction
+		(at 91.44 97.79)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "959b6a9e-e952-4a7b-9e7d-1ceb6ed5cdea")
+	)
+	(junction
 		(at 262.89 142.24)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -3883,6 +4162,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "ac6e1037-0b0e-4655-900e-ffa6527c72f6")
+	)
+	(junction
+		(at 109.22 124.46)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b250066c-e654-4bbc-b7db-d6f1d8eb1c71")
 	)
 	(junction
 		(at 152.4 113.03)
@@ -3909,10 +4194,6 @@
 	(no_connect
 		(at 177.8 81.28)
 		(uuid "30fa5301-d1a8-4218-90c5-8d514ffa76f9")
-	)
-	(no_connect
-		(at 177.8 78.74)
-		(uuid "42311bc9-73bf-4b13-857c-db9fb5d4e452")
 	)
 	(no_connect
 		(at 177.8 91.44)
@@ -3959,8 +4240,8 @@
 		(uuid "ac5334e0-f9f3-4d93-b06d-9614d1d32a6a")
 	)
 	(no_connect
-		(at 127 91.44)
-		(uuid "b4d02990-6c7a-4b17-98a9-fee6188df009")
+		(at 177.8 78.74)
+		(uuid "dbf54287-4c52-4e87-b172-c41b3b79bf29")
 	)
 	(no_connect
 		(at 127 88.9)
@@ -4081,6 +4362,16 @@
 			(type default)
 		)
 		(uuid "1567e2ff-88e3-4a0b-a817-d8c52e279b1f")
+	)
+	(wire
+		(pts
+			(xy 109.22 123.19) (xy 109.22 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "174c502d-cc6e-465b-bb68-8aea4271f6e9")
 	)
 	(wire
 		(pts
@@ -4214,6 +4505,16 @@
 	)
 	(wire
 		(pts
+			(xy 109.22 133.35) (xy 114.3 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4c133068-3532-4925-834e-86a00962d46e")
+	)
+	(wire
+		(pts
 			(xy 107.95 76.2) (xy 113.03 76.2)
 		)
 		(stroke
@@ -4264,6 +4565,16 @@
 	)
 	(wire
 		(pts
+			(xy 91.44 97.79) (xy 91.44 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5052b3bb-7fe7-4b2f-9077-65b512955755")
+	)
+	(wire
+		(pts
 			(xy 62.23 40.64) (xy 62.23 43.18)
 		)
 		(stroke
@@ -4311,6 +4622,16 @@
 			(type default)
 		)
 		(uuid "5f155280-453e-49a1-8eb3-13c18b8b9b03")
+	)
+	(wire
+		(pts
+			(xy 91.44 124.46) (xy 109.22 124.46)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "633a3143-d3f1-4669-9c43-70f3356b1679")
 	)
 	(wire
 		(pts
@@ -4394,6 +4715,36 @@
 	)
 	(wire
 		(pts
+			(xy 99.06 115.57) (xy 109.22 115.57)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "78ba7b47-83f3-48dc-a43f-da85f0f95fff")
+	)
+	(wire
+		(pts
+			(xy 109.22 130.81) (xy 109.22 133.35)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7c39278c-7b66-4442-ab35-97efcb57490e")
+	)
+	(wire
+		(pts
+			(xy 91.44 91.44) (xy 91.44 97.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7ee09ab2-9c62-496e-866a-1908064ec347")
+	)
+	(wire
+		(pts
 			(xy 222.25 121.92) (xy 222.25 135.89)
 		)
 		(stroke
@@ -4471,6 +4822,16 @@
 			(type default)
 		)
 		(uuid "9a9f345d-feac-4dd1-835a-b3ded82da7a7")
+	)
+	(wire
+		(pts
+			(xy 91.44 97.79) (xy 93.98 97.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "9c5b117c-d9c0-48ce-8c0c-ca7fef4cede9")
 	)
 	(wire
 		(pts
@@ -4624,6 +4985,16 @@
 	)
 	(wire
 		(pts
+			(xy 109.22 124.46) (xy 109.22 125.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b6cacbb0-90b2-4472-8f39-f8923e92cd66")
+	)
+	(wire
+		(pts
 			(xy 262.89 146.05) (xy 262.89 142.24)
 		)
 		(stroke
@@ -4764,6 +5135,16 @@
 	)
 	(wire
 		(pts
+			(xy 91.44 91.44) (xy 127 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f4acf7a9-4b20-4805-8a6d-fda03d63780d")
+	)
+	(wire
+		(pts
 			(xy 64.77 38.1) (xy 69.85 38.1)
 		)
 		(stroke
@@ -4882,6 +5263,16 @@
 		)
 		(uuid "3e49d558-2a89-4649-9380-7e765b1287ff")
 	)
+	(label "+3V3"
+		(at 114.3 133.35 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "4dc9aa27-4dd0-4cab-a6ed-fe4feda74d44")
+	)
 	(label "+4S_PROT"
 		(at 36.83 26.67 0)
 		(effects
@@ -4891,6 +5282,16 @@
 			(justify left bottom)
 		)
 		(uuid "697cec56-79b0-494a-b022-dc7ab21af0a7")
+	)
+	(label "TEMP_SENSE"
+		(at 93.98 97.79 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "7a01fe24-877a-44a8-ba32-921dae85ecd5")
 	)
 	(label "SWDIO"
 		(at 52.07 161.29 0)
@@ -5755,7 +6156,6 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "2e95e930-763b-422c-9398-589e480da757")
 		(property "Reference" "#PWR021"
 			(at 218.44 80.01 0)
@@ -5769,7 +6169,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 218.44 78.74 0)
+			(at 129.54 115.57 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -6869,6 +7269,88 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R_Small")
+		(at 109.22 128.27 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "696630f7-1f95-4d51-9e03-96b50f2730ee")
+		(property "Reference" "R14"
+			(at 111.76 126.9999 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.016 1.016)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "10k"
+			(at 111.76 129.5399 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_01005_0402Metric"
+			(at 109.22 128.27 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 109.22 128.27 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Resistor, small symbol"
+			(at 109.22 128.27 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "2"
+			(uuid "664d06d7-fbb7-469d-bf8d-87a57915b7da")
+		)
+		(pin "1"
+			(uuid "d82f5ce3-9f54-4d07-9514-55b771135c06")
+		)
+		(instances
+			(project "Battery Circuit"
+				(path "/7a655004-a346-44c7-97fe-b018ae904084"
+					(reference "R14")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Connector:Conn_01x04_Pin")
 		(at 44.45 161.29 0)
 		(unit 1)
@@ -7106,6 +7588,85 @@
 			(project "Battery Circuit"
 				(path "/7a655004-a346-44c7-97fe-b018ae904084"
 					(reference "TP4")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 99.06 115.57 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "6ffc5b33-f6b5-401e-988d-b0fd43c81e94")
+		(property "Reference" "#PWR027"
+			(at 99.06 121.92 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 101.6 116.8399 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 99.06 115.57 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 99.06 115.57 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 99.06 115.57 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "25c67279-f90e-4397-9452-26bff51686d3")
+		)
+		(instances
+			(project "Battery Circuit"
+				(path "/7a655004-a346-44c7-97fe-b018ae904084"
+					(reference "#PWR027")
 					(unit 1)
 				)
 			)
@@ -10696,7 +11257,6 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "f80985bc-d7a4-4ccb-9ce8-9e39fab0fec8")
 		(property "Reference" "#PWR022"
 			(at 207.01 82.55 0)
@@ -10710,7 +11270,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 207.01 81.28 0)
+			(at 118.11 118.11 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10841,6 +11401,88 @@
 			(project "Battery Circuit"
 				(path "/7a655004-a346-44c7-97fe-b018ae904084"
 					(reference "C1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:Thermistor_NTC")
+		(at 109.22 119.38 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "fa79fd56-ed8c-4282-81fe-b189d14a695c")
+		(property "Reference" "TH1"
+			(at 111.76 118.4274 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Thermistor_NTC_10k"
+			(at 111.76 120.9674 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_01005_0402Metric"
+			(at 109.22 118.11 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 109.22 118.11 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Temperature dependent resistor, negative temperature coefficient"
+			(at 109.22 119.38 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "f7d203f1-82c1-45f5-b480-d6107072b1a4")
+		)
+		(pin "2"
+			(uuid "bfa62873-947c-4e96-974a-74b8cb9ab113")
+		)
+		(instances
+			(project "Battery Circuit"
+				(path "/7a655004-a346-44c7-97fe-b018ae904084"
+					(reference "TH1")
 					(unit 1)
 				)
 			)
@@ -11054,58 +11696,6 @@
 			"e997c276-c0d6-409f-9d3e-9def5a390278" "ea82161e-bb77-4697-8eb5-af52bb8edb42"
 			"ec42cda5-c23e-47a4-8d80-e479ccbec3cc" "f9cf645a-9c37-42bc-9a86-29ce57d6d4fd"
 			"fc1e9bea-e32b-4f01-84d5-a2f069b4aede"
-		)
-	)
-	(group ""
-		(uuid "8eb1ed75-d2f4-4afa-bdda-56d3aa1e799a")
-		(members "012c6f9f-c2dc-4af7-a0e4-3e2783104bb7" "046f3b06-9652-4ce6-97fb-c3307ae4b310"
-			"04be15bd-2708-4003-9759-d8a317379e48" "0613b822-4367-4c66-aac7-65d5172df03e"
-			"07d8fa0e-956d-471c-92bb-333a5cf431e1" "07eec60c-65d1-4b43-b263-50b9113ec3ab"
-			"09d794e6-ec86-441c-959f-823047853b46" "0ddd028e-a432-4f18-960a-838f022cadf6"
-			"10fc8a09-3622-45af-8c66-0817cbbfc8d0" "11e3557a-088a-45ad-b4a7-51650aed388b"
-			"15ca55bb-e97c-4065-93aa-5c6d635434c4" "1dddcc41-632b-4a0c-8634-1b416361d4c4"
-			"220f2e3a-d7bf-42de-b4f1-79b4fc7100ce" "297309f3-b8d7-4d3d-b66f-63255f0c5470"
-			"2e95e930-763b-422c-9398-589e480da757" "30382992-7f84-4644-ae1b-8d9ce979c40e"
-			"30fa5301-d1a8-4218-90c5-8d514ffa76f9" "354a212e-0c66-42a4-90d8-fba718e8a544"
-			"38fe9148-7dd2-47f9-ace1-964bdff45218" "39ed0f17-4ea4-455a-bdef-2ceb3627c565"
-			"3a89cc2e-99bf-4791-b9c8-3e5be7a5d246" "3f14308d-ab17-4a70-89c9-f1411b9d592f"
-			"42311bc9-73bf-4b13-857c-db9fb5d4e452" "46982452-64c7-4a66-9171-e392d3c64bae"
-			"487fe23d-e2f7-4f9a-ad02-94b3f60bc475" "48eb8e44-1067-43be-a083-5cba069ff414"
-			"490e4261-5ee3-438a-a2c7-385eca1b2aca" "4a85ac90-50ab-4f84-9080-4d16bd8a557b"
-			"4c1ec2bc-7d7e-412b-80b2-32b9d9511ebb" "4ebc0b38-17e5-4bc3-a2dc-f647fc69bec5"
-			"4f3a053f-1175-45e0-b990-3c1244af6977" "4f9ede96-96cb-4b10-8cf7-499dbb96228b"
-			"553ee21a-5d8d-4260-82fc-70ac935a667b" "558c1d3f-cd17-46fb-9149-7a8457f51a43"
-			"585156a3-9902-4cfb-b161-e3b2e6521ef4" "5bd85ce4-6055-4bba-b5bf-3c66199d9f22"
-			"5c9ea0ff-592c-4728-8f7c-9978c62db01a" "66732ecf-4e4d-4609-b6fd-efd5e2a0f9bd"
-			"6ce8fcd8-c4e8-4d68-9502-1d5d82b76d4c" "719270d4-dd7a-4060-b83f-42f64970fb3a"
-			"74ececbe-b2fc-43d2-be64-d02e375915e3" "77f1a103-907f-4b4a-9bc8-86140dce1f15"
-			"78690c89-7d30-404b-aaa0-c10d5f9b266c" "82cbfe59-8c5d-47d2-a3ab-8c71217880bb"
-			"8a86a40a-c2dc-48ea-bfae-f31155cfc86d" "9020af32-40c3-46bf-9133-c97620e8d797"
-			"927eaa81-eaf8-4d9a-b175-026121e7bbac" "92e569a2-a894-4828-b9cf-ed4c2b6f68ae"
-			"99c3a697-fb62-4201-b50b-390978ac114c" "9a1aa54a-9201-4b51-b8e1-dbb650bde3cf"
-			"9a48bc34-56af-4f20-95c5-cb4b9a289ce0" "9a612e33-a3ec-4ed4-a02a-9e4258085898"
-			"9c7626bd-dbc1-4b25-b8ab-901e5aa3f911" "9eca3618-eb7b-45b6-a9d9-4bc2d5f32f26"
-			"a17e5223-7061-47a8-a92f-15f4ee70d527" "a36d890a-5825-4779-b3a1-76b4e7c20694"
-			"ab292a54-0efa-407b-9d30-5b2ae4d907ec" "ac5334e0-f9f3-4d93-b06d-9614d1d32a6a"
-			"ac6e1037-0b0e-4655-900e-ffa6527c72f6" "acf1bed1-9455-4148-810a-c1a00b1883fa"
-			"ad1b9f1f-c291-4d2e-a50d-e17ea70e42dc" "b1e48c5c-3f40-4e53-990d-07803548c42f"
-			"b4d02990-6c7a-4b17-98a9-fee6188df009" "b51a66fc-0d4f-4098-ac4a-2862d07a443e"
-			"b57ad6f5-4061-4440-8e80-d08ab6e9b5b7" "b69196f8-e05d-408a-ae16-553d91b28897"
-			"b8351511-0e9e-4bf3-b924-f5cff83bb300" "c124b738-0d54-4229-9e4d-89f1dea39b82"
-			"c15bc18a-1d67-4722-94e6-221ae702a4be" "c1a8f301-f735-4903-8ecb-da8cb7791dab"
-			"c4f7d373-d33e-4b27-8772-684cec44e96c" "c8a18082-5600-46bf-83ca-d49fd880bc5f"
-			"cb63094c-11cd-4349-825b-c03de698e30c" "cd1440f2-e749-4fac-8e38-516c37614d78"
-			"d020873c-f37b-4798-9a25-0a7ab670d9f2" "d137eb73-12e1-4f15-8e74-69282fa13d2c"
-			"d4360e0c-8798-4c08-a7d3-e2d9262f0b0e" "db5c5721-76b5-4f44-9485-0dc3bc2c706f"
-			"de4f746b-b2fa-40f8-9b16-88b66c292c56" "df259fd4-f5d0-43c6-be3b-4450f6a35baa"
-			"e046eadf-26f8-4c24-b04a-1544d2f77a9c" "e188a18f-02eb-465f-bbfb-3e03bd724d99"
-			"e43e8b8e-7fd1-4ed4-b4c4-124c89ad374c" "e4919fba-0258-4d5a-a287-9e2b154b884e"
-			"e4f94198-f401-41a4-8c21-a1bd03e4f097" "eb09f10c-b00d-4a3b-a239-e6bad775bc2c"
-			"eeefa2d6-21b8-41bb-a1fd-87c0576b01ee" "efc58b88-0717-445a-9c8a-262bc8038ae7"
-			"f1609a94-e563-4c72-8d36-8e34035be8c9" "f50c6df4-52d9-43b5-984b-4b0183d93c77"
-			"f66f7e53-34a2-4876-aedd-10936d2ac5f0" "f80985bc-d7a4-4ccb-9ce8-9e39fab0fec8"
-			"fbec033a-62dc-4a6b-a742-88a70e3261e3" "fc0636ca-cae1-48ac-bf35-c4497cc89b8c"
-			"fc1685f7-1dbd-40c6-b934-91b6fbba8fc2" "fe9b4a86-dda7-46d6-a9ef-e969101a0c0d"
 		)
 	)
 	(sheet_instances
