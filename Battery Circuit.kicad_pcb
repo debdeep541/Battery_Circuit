@@ -6926,7 +6926,7 @@
 				)
 			)
 		)
-		(property "Value" "Blue"
+		(property "Value" "Green"
 			(at 0 1.43 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -7713,7 +7713,7 @@
 				)
 			)
 		)
-		(property "Value" "Blue"
+		(property "Value" "Green"
 			(at 0 1.43 0)
 			(layer "F.Fab")
 			(hide yes)
@@ -15442,15 +15442,6 @@
 				(xy 152.144392 91.342186) (xy 152.1785 91.214892) (xy 152.1785 89.421) (xy 152.198185 89.353961)
 				(xy 152.250989 89.308206) (xy 152.301999 89.297001) (xy 160.942757 89.262359)
 			)
-		)
-	)
-	(group ""
-		(uuid "0413c1cd-fc05-435a-9f84-33769c2baf79")
-		(members "0a004f0c-470b-4d08-906b-5c359fbb434e" "6f456ec9-d39b-4d39-af0d-d1c9770db869"
-			"903ecc9e-f5b2-494d-ac4c-62453744a50d" "a3816e48-3ce3-4a7b-b6f8-05a8cdf704b8"
-			"d12ee226-368a-4dee-bd1c-65814e7010f1" "d44153d5-9140-40ca-be6c-89fa441412da"
-			"e38b0a4b-40db-4308-99b4-2d334da7dc17" "e5b5006f-bbca-4032-a89b-64f35cc98941"
-			"fe8c93e3-1548-4acd-a021-e908c11a5ef3" "ff5a212c-d25b-4c00-ae8b-297f4813fe8f"
 		)
 	)
 	(embedded_fonts no)
