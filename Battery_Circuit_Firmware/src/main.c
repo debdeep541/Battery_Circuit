@@ -13,8 +13,8 @@
 // --- Safety Thresholds & Configurations ---
 #define VOLTAGE_MAX_MV       17500   // 17.5V Overcharge threshold
 #define VOLTAGE_MIN_MV       15000   // 15.0V Deep discharge threshold
-#define ADC_MAX_MV_RANGE     25404   // Assumes divider scales 33.297V down to 3.3V
-#define TEMP_MAX_45C_ADC     800    // Thermistor threshold (Drops as heat rises)
+#define ADC_MAX_MV_RANGE     24000   // Calibrated down from 25404 for standalone VREF
+#define TEMP_MAX_45C_ADC     1400    // Calibrated hot threshold (Triggers when value goes ABOVE this)
 #define ADC_TIMEOUT_LIMIT    5000    // Rule 6: Timeout counter limit
 #define MAX_LIFETIME_LOOPS   0xFFFFFFFF // Rule 6: Ultimate main loop safety cap
 
@@ -75,38 +75,43 @@ void updateLedDisplay(uint32_t voltageMv) {
 }
 
 /**
- * @brief Reads a specific ADC channel dynamically.
+ * @brief Reads a specific ADC channel dynamically with 8-sample oversampling.
  * Rule 1: No break/goto (uses readComplete flag).
  * Rule 6: Uses timeoutCounter instead of an infinite while loop.
  */
 uint16_t readADCChannel(uint32_t channel) {
     ADC_ChannelConfTypeDef sConfig = {0};
-    uint16_t reading = 0;
+    uint32_t sampleSum = 0;
     
-    // 'volatile' prevents optimizer from skipping the safety loop
-    volatile uint16_t timeoutCounter = 0;
-    volatile uint8_t readComplete = 0; 
-
     sConfig.Channel = channel;
     sConfig.Rank = ADC_REGULAR_RANK_1;
     sConfig.SamplingTime = ADC_SAMPLINGTIME_COMMON_1;
     
     HAL_ADC_ConfigChannel(&hadc1, &sConfig);
-    HAL_ADC_Start(&hadc1);
     
-    // Loop with explicit safety feedback counter
-    while ((readComplete == 0) && (timeoutCounter < ADC_TIMEOUT_LIMIT)) {
-        if (HAL_ADC_PollForConversion(&hadc1, 1) == HAL_OK) {
-            reading = HAL_ADC_GetValue(&hadc1);
-            readComplete = 1; 
-        } 
-        if (readComplete == 0) { // Flat structure (avoids else nesting)
-            timeoutCounter++;
+    // Take 8 rapid samples and sum them up to filter noise spikes
+    for (uint8_t i = 0; i < 8; i++) {
+        volatile uint16_t timeoutCounter = 0;
+        volatile uint8_t readComplete = 0; 
+        uint16_t singleReading = 0;
+
+        HAL_ADC_Start(&hadc1);
+        
+        while ((readComplete == 0) && (timeoutCounter < ADC_TIMEOUT_LIMIT)) {
+            if (HAL_ADC_PollForConversion(&hadc1, 1) == HAL_OK) {
+                singleReading = HAL_ADC_GetValue(&hadc1);
+                readComplete = 1; 
+            } 
+            if (readComplete == 0) {
+                timeoutCounter++;
+            }
         }
+        HAL_ADC_Stop(&hadc1);
+        sampleSum += singleReading;
     }
     
-    HAL_ADC_Stop(&hadc1);
-    return reading;
+    // Return the integer average (sum / 8)
+    return (uint16_t)(sampleSum / 8);
 }
 
 /**
@@ -128,6 +133,9 @@ int main(void)
   HAL_GPIO_WritePin(GPIOF, GPIO_PIN_2, GPIO_PIN_SET); 
   HAL_GPIO_WritePin(GPIOA, GPIO_PIN_1, GPIO_PIN_SET); 
 
+  // Allow standalone buck regulator and ADC to stabilize before first reading
+  HAL_Delay(250); 
+
   // Rule 6: Strict indefinite loop protection via counter
   while ((systemRunning == 1) && (mainSafetyCounter < MAX_LIFETIME_LOOPS))
   {
@@ -139,7 +147,7 @@ int main(void)
     // Sequential State Evaluation (Rule 4)
     if (currentVoltageMv > VOLTAGE_MAX_MV) { faultDetected = 1; }
     if (currentVoltageMv < VOLTAGE_MIN_MV) { faultDetected = 1; }
-    if (rawTemp < TEMP_MAX_45C_ADC)        { faultDetected = 1; }
+    if (rawTemp > TEMP_MAX_45C_ADC)        { faultDetected = 1; } // Re-enabled and corrected to trigger on heat increase
     
     if (faultDetected == 1) {
         executeEmergencyStop();
