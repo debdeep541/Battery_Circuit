@@ -1,10 +1,10 @@
 /* USER CODE BEGIN Header */
 /**
-  ******************************************************************************
-  * @file           : main.c
-  * @brief          : Main program body (Strict Methodology Compliant)
-  ******************************************************************************
-  */
+ ******************************************************************************
+ * @file           : main.c
+ * @brief          : Main program body (Strict Methodology Compliant)
+ ******************************************************************************
+ */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
@@ -13,8 +13,8 @@
 // --- Safety Thresholds & Configurations ---
 #define VOLTAGE_MAX_MV       17500   // 17.5V Overcharge threshold
 #define VOLTAGE_MIN_MV       15000   // 15.0V Deep discharge threshold
-#define ADC_MAX_MV_RANGE     25000   // Assumes divider scales 25V down to 3.3V
-#define TEMP_MAX_45C_ADC     1500    // Thermistor threshold (Drops as heat rises)
+#define ADC_MAX_MV_RANGE     25404   // Assumes divider scales 33.297V down to 3.3V
+#define TEMP_MAX_45C_ADC     800    // Thermistor threshold (Drops as heat rises)
 #define ADC_TIMEOUT_LIMIT    5000    // Rule 6: Timeout counter limit
 #define MAX_LIFETIME_LOOPS   0xFFFFFFFF // Rule 6: Ultimate main loop safety cap
 
@@ -82,8 +82,10 @@ void updateLedDisplay(uint32_t voltageMv) {
 uint16_t readADCChannel(uint32_t channel) {
     ADC_ChannelConfTypeDef sConfig = {0};
     uint16_t reading = 0;
-    uint16_t timeoutCounter = 0;
-    uint8_t readComplete = 0; 
+    
+    // 'volatile' prevents optimizer from skipping the safety loop
+    volatile uint16_t timeoutCounter = 0;
+    volatile uint8_t readComplete = 0; 
 
     sConfig.Channel = channel;
     sConfig.Rank = ADC_REGULAR_RANK_1;
@@ -108,13 +110,14 @@ uint16_t readADCChannel(uint32_t channel) {
 }
 
 /**
-  * @brief  The application entry point.
-  * Rule 6: Removes while(1). Replaced with evaluated run state and loop limits.
-  */
+ * @brief  The application entry point.
+ * Rule 6: Removes while(1). Replaced with evaluated run state and loop limits.
+ */
 int main(void)
 {
-  uint8_t systemRunning = 1;
-  uint32_t mainSafetyCounter = 0;
+  // 'volatile' ensures compiler respects the safety counter and run state
+  volatile uint8_t systemRunning = 1;
+  volatile uint32_t mainSafetyCounter = 0;
 
   HAL_Init();
   SystemClock_Config();
@@ -154,14 +157,14 @@ int main(void)
   executeEmergencyStop();
   
   // Terminal safety sink to prevent uncontrolled execution post-halt
-  uint16_t terminalHalt = 0;
+  volatile uint16_t terminalHalt = 0;
   while(terminalHalt < 1000) { terminalHalt++; }
 }
 
 /**
-  * @brief System Clock Configuration
-  * Rule 3: Kept under 50 lines.
-  */
+ * @brief System Clock Configuration
+ * Rule 3: Kept under 50 lines.
+ */
 void SystemClock_Config(void)
 {
   RCC_OscInitTypeDef RCC_OscInitStruct = {0};
@@ -181,9 +184,9 @@ void SystemClock_Config(void)
 }
 
 /**
-  * @brief ADC1 Initialization Function
-  * Rule 3: Condensed configuration struct to stay under 50 lines.
-  */
+ * @brief ADC1 Initialization Function
+ * Rule 3: Condensed configuration struct to stay under 50 lines.
+ */
 static void MX_ADC1_Init(void)
 {
   ADC_ChannelConfTypeDef sConfig = {0};
@@ -208,8 +211,8 @@ static void MX_ADC1_Init(void)
 }
 
 /**
-  * @brief GPIO Initialization Function
-  */
+ * @brief GPIO Initialization Function
+ */
 static void MX_GPIO_Init(void)
 {
   GPIO_InitTypeDef GPIO_InitStruct = {0};
@@ -236,10 +239,10 @@ static void MX_GPIO_Init(void)
 }
 
 /**
-  * @brief  Fatal error execution state.
-  * Rule 1: No software resets. 
-  * Rule 6/7: Hardware stops over infinite loops.
-  */
+ * @brief  Fatal error execution state.
+ * Rule 1: No software resets. 
+ * Rule 6/7: Hardware stops over infinite loops.
+ */
 void Error_Handler(void)
 {
   __disable_irq();
@@ -249,7 +252,7 @@ void Error_Handler(void)
   HAL_GPIO_WritePin(GPIOA, GPIO_PIN_1, GPIO_PIN_RESET);
   
   // Rule 6: Terminal safety counter instead of while(1)
-  uint32_t terminalCounter = 0;
+  volatile uint32_t terminalCounter = 0;
   while (terminalCounter < 65000) {
       terminalCounter++;
   }
